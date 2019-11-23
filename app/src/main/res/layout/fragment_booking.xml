@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bggradient"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.BookingFragment">
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/rubik_light"
+                    android:text="Choose Type Room"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/reguler_room"
+                    app:cardCornerRadius="10dp"
+                    android:elevation="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:textColor="@color/colorAccent"
+                            android:fontFamily="@font/rubik_light"
+                            android:text="Regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:layout_marginTop="8dp"
+                            android:background="#D3D3D3"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/foto_kamar"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/sleep"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"/>
+
+                                <TextView
+                                    android:id="@+id/harga_kamar"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_gravity="center"
+                                    android:textSize="13sp"
+                                    android:text="Rp.250.000"
+                                    android:textColor="@color/colorAccent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:background="#D3D3D3"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"/>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="196dp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:fontFamily="@font/rubik_light"
+                                    android:text="Description :"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:textColor="@color/colorAccent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:textSize="10sp"
+                                    android:fontFamily="@font/rubik_light"
+                                    android:text="Wikrama hotel rooms are rooms \nthat are elegantly designed and \ncomfortable. 1 room for 2 people."
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:textColor="#444"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:fontFamily="@font/rubik_light"
+                                    android:text="Facilities :"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:textColor="@color/colorAccent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="98dp"
+                                        android:layout_height="match_parent">
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Television"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- AC"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Wifi"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="98dp"
+                                        android:layout_height="match_parent">
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Thermos"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Mini Bar"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Hot Water"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/deluxe_room"
+                    app:cardCornerRadius="10dp"
+                    android:elevation="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="36dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kotak">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:textColor="@color/colorAccent"
+                            android:fontFamily="@font/rubik_light"
+                            android:text="Deluxe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:layout_marginTop="8dp"
+                            android:background="#D3D3D3"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/foto_kamar2"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/sleep"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"/>
+
+                                <TextView
+                                    android:id="@+id/harga_kamar2"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_gravity="center"
+                                    android:textSize="13sp"
+                                    android:text="Rp.250.000"
+                                    android:textColor="@color/colorAccent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:background="#D3D3D3"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"/>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="196dp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:fontFamily="@font/rubik_light"
+                                    android:text="Description :"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:textColor="@color/colorAccent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:textSize="10sp"
+                                    android:fontFamily="@font/rubik_light"
+                                    android:text="Wikrama hotel rooms are rooms \nthat are elegantly designed and \ncomfortable. 1 room for 2 people."
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:textColor="#444"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:fontFamily="@font/rubik_light"
+                                    android:text="Facilities :"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:textColor="@color/colorAccent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="98dp"
+                                        android:layout_height="match_parent">
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Television"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- AC"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Wifi"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="98dp"
+                                        android:layout_height="match_parent">
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Thermos"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Mini Bar"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Hot Water"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/superior_room"
+                    app:cardCornerRadius="10dp"
+                    android:elevation="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginBottom="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/deluxe_room">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:textColor="@color/colorAccent"
+                            android:fontFamily="@font/rubik_light"
+                            android:text="Superior"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:layout_marginTop="8dp"
+                            android:background="#D3D3D3"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/foto_kamar3"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/sleep"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"/>
+
+                                <TextView
+                                    android:id="@+id/harga_kamar3"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_gravity="center"
+                                    android:textSize="13sp"
+                                    android:text="Rp.250.000"
+                                    android:textColor="@color/colorAccent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:background="#D3D3D3"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"/>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="196dp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:fontFamily="@font/rubik_light"
+                                    android:text="Description :"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:textColor="@color/colorAccent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:textSize="10sp"
+                                    android:fontFamily="@font/rubik_light"
+                                    android:text="Wikrama hotel rooms are rooms \nthat are elegantly designed and \ncomfortable. 1 room for 2 people."
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:textColor="#444"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:fontFamily="@font/rubik_light"
+                                    android:text="Facilities :"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:textColor="@color/colorAccent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="98dp"
+                                        android:layout_height="match_parent">
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Television"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- AC"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Wifi"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="98dp"
+                                        android:layout_height="match_parent">
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Thermos"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Mini Bar"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:fontFamily="@font/rubik_light"
+                                            android:text="- Hot Water"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="0dp"
+                                            android:layout_marginLeft="8dp"
+                                            android:textColor="#444"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>

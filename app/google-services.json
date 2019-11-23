@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "239048726210",
+    "firebase_url": "https://wikramahotel.firebaseio.com",
+    "project_id": "wikramahotel",
+    "storage_bucket": "wikramahotel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239048726210:android:8a2404d6b826977c644d5b",
+        "android_client_info": {
+          "package_name": "com.baytech.wikramahotel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239048726210-j5biqjaqfpaqov4gs7ljsdbeat59aps7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.baytech.wikramahotel",
+            "certificate_hash": "63effdac44c6845f478655a06cd97d0b60a3fbf2"
+          }
+        },
+        {
+          "client_id": "239048726210-tmaosu1ak8l8f24r0agol23c787emp5n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAShzQ3hVPfVo3lVKohme_ot1h_wSPiCwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239048726210-tmaosu1ak8l8f24r0agol23c787emp5n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
