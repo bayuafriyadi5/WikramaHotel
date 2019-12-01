@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -35,6 +36,9 @@ public class StrukActivity extends AppCompatActivity {
     String USERNAME_KEY = "usernamekey";
     String username_key = "";
     String username_key_new = "";
+    Integer kamar = 0;
+    Integer kamar_now = 0;
+    Integer min = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +58,42 @@ public class StrukActivity extends AppCompatActivity {
         assert bundle != null;
         final String total = bundle.getString("total_harga");
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child("Book").child(total);
+        new CountDownTimer(43200000, 1000) {
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            public void onFinish() {
+                tambah_kamar();
+                cancel_book = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child(total);
+                cancel_book.removeValue();
+            }
+        }.start();
+        reference = FirebaseDatabase.getInstance().getReference().child("Room").child("Reguler");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child("status").getValue().equals("Canceled")){
-                    cancel.setVisibility(View.INVISIBLE);
-                    cancel.setEnabled(false);
+                kamar_now = Integer.valueOf(dataSnapshot.child("jumlah_kamar").getValue().toString());
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        reference = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child(total);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    kamar = Integer.valueOf(dataSnapshot.child("jumlah_kamar").getValue().toString());
+                    total_harga.setText("Rp. " + (dataSnapshot.child("total_harga").getValue()).toString());
+                }else{
+                    return;
                 }
-                total_harga.setText("Rp. " + (dataSnapshot.child("total_harga").getValue()).toString());
+
             }
 
             @Override
@@ -87,11 +118,12 @@ public class StrukActivity extends AppCompatActivity {
             builder1.setPositiveButton(
                     "Yes",
                     (dialog, id) -> {
-                        cancel_book = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child("Book").child(total);
+                        cancel_book = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child(total);
                         cancel_book.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                cancel_book.getRef().child("status").setValue("Canceled");
+                                tambah_kamar();
+                                dataSnapshot.getRef().setValue(null);
                             }
 
                             @Override
@@ -110,6 +142,21 @@ public class StrukActivity extends AppCompatActivity {
 
             AlertDialog alert11 = builder1.create();
             alert11.show();
+        });
+    }
+
+    private void tambah_kamar() {
+        reference = FirebaseDatabase.getInstance().getReference().child("Room").child("Reguler");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                reference.getRef().child("jumlah_kamar").setValue(kamar_now + kamar).toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
         });
     }
 

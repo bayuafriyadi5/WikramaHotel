@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -22,7 +23,7 @@ import java.util.Random;
 
 public class BookingActivity extends AppCompatActivity {
 
-    DatabaseReference reference,booking,date,room_value;
+    DatabaseReference reference,booking,date,room_value,cancel_book;
     ImageView back;
     CardView book,min_bed,add_bed,min_room,add_room;
     TextView jml,harga,textjumlahroom,textjumlahbed,check_in,check_out;
@@ -79,7 +80,7 @@ public class BookingActivity extends AppCompatActivity {
         textjumlahroom.setText(valuejumlahroom.toString());
         textjumlahbed.setText(valuejumlahbed.toString());
 
-        date = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child("Book").child(room);
+        date = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child(room);
         date.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -126,9 +127,10 @@ public class BookingActivity extends AppCompatActivity {
 
                 valuetotal = harga_room * valuejumlahroom ;
                 valuetotalbed = harga_bed * valuejumlahbed;
-                valueselisih =  valuecheckout - valuecheckin;
+//
                 total = valuetotalbed + valuetotal * valueselisih;
                 jml.setText("Rp." + total);
+
             }
 
             @Override
@@ -185,7 +187,7 @@ public class BookingActivity extends AppCompatActivity {
             }else if(valuejumlahroom <= 0){
                 Toast.makeText(this, "Please Input Your Room Quantity", Toast.LENGTH_SHORT).show();
             }else{
-                booking = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child("Book").child(room);
+                booking = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child(room);
                 booking.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -194,6 +196,8 @@ public class BookingActivity extends AppCompatActivity {
                         booking.getRef().child("harga_extra_bed").setValue(valuetotalbed.toString());
                         booking.getRef().child("harga_room").setValue(valuetotal.toString());
                         booking.getRef().child("status").setValue("In Progress");
+                        booking.getRef().child("no_telp").setValue(username_key_new);
+                        booking.getRef().child("jumlah_kamar").setValue(valuejumlahroom);
 
                         valueselisih = 0;
 

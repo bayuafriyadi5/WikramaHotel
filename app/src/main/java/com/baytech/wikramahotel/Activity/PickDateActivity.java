@@ -89,7 +89,7 @@ public class PickDateActivity extends AppCompatActivity {
 
         next.setOnClickListener(v -> {
             validasitgl();
-            reference = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child("Book").child(currentTime);
+            reference = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child(currentTime);
             reference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -124,7 +124,7 @@ public class PickDateActivity extends AppCompatActivity {
     }
 
     private void validasitgl() {
-        reference = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child("Book").child(currentTime);
+        reference = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child(currentTime);
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

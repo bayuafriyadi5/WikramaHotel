@@ -74,7 +74,7 @@ public class HistoryFragment extends Fragment {
         list = new ArrayList<>();
 
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child("Book");
+        reference = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

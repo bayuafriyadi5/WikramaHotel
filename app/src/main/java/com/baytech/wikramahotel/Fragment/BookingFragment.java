@@ -60,7 +60,7 @@ public class BookingFragment extends Fragment {
 
         reference = FirebaseDatabase.getInstance().getReference().child("Room").child("Reguler");
 
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.limitToLast(100).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 harga.setText("Rp."+ dataSnapshot.child("harga").getValue().toString());
@@ -72,33 +72,24 @@ public class BookingFragment extends Fragment {
             }
         });
 
-        deluxe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), NotAvailableActivity.class);
-                startActivity(i);
-            }
+        deluxe.setOnClickListener(v -> {
+            Intent i = new Intent(getActivity(), NotAvailableActivity.class);
+            startActivity(i);
         });
 
         superior = getActivity().findViewById(R.id.superior_room);
 
-        superior.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(),NotAvailableActivity.class);
-                startActivity(i);
-            }
+        superior.setOnClickListener(v -> {
+            Intent i = new Intent(getActivity(),NotAvailableActivity.class);
+            startActivity(i);
         });
 
         reguler = getActivity().findViewById(R.id.reguler_room);
 
-        reguler.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gotoroom = new Intent(getActivity(), PickDateActivity.class);
-                gotoroom.putExtra("Room","Reguler");
-                startActivity(gotoroom);
-            }
+        reguler.setOnClickListener(v -> {
+            Intent gotoroom = new Intent(getActivity(), PickDateActivity.class);
+            gotoroom.putExtra("Room","Reguler");
+            startActivity(gotoroom);
         });
     }
 }

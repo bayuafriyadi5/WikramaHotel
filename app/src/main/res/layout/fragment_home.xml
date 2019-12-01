@@ -258,10 +258,7 @@
                             android:layout_gravity="right"
                             android:layout_marginTop="8dp"
                             android:text="View Location"
-                            android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="@+id/cardView2"
-                            app:layout_constraintStart_toStartOf="@+id/cardView2"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+                            android:textColor="@color/white" />
 
 
                     </LinearLayout>
@@ -304,39 +301,7 @@
 
                             <ImageView
                                 android:layout_marginRight="24dp"
-                                android:src="@drawable/ic_undraw_apartment_rent_o0ut"
-                                android:layout_width="227dp"
-                                android:layout_height="98dp"/>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_marginTop="8dp"
-                            android:layout_marginLeft="20dp"
-                            app:cardCornerRadius="10dp"
-                            android:elevation="10dp"
-                            android:layout_width="227dp"
-                            android:layout_height="98dp">
-
-                            <ImageView
-                                android:layout_marginRight="24dp"
-                                android:src="@drawable/ic_undraw_apartment_rent_o0ut"
-                                android:layout_width="227dp"
-                                android:layout_height="98dp"/>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_marginTop="8dp"
-                            android:layout_marginLeft="20dp"
-                            app:cardCornerRadius="10dp"
-                            android:elevation="10dp"
-                            android:layout_width="227dp"
-                            android:layout_height="98dp">
-
-                            <ImageView
-                                android:layout_marginRight="24dp"
-                                android:src="@drawable/ic_undraw_apartment_rent_o0ut"
+                                android:src="dr"
                                 android:layout_width="227dp"
                                 android:layout_height="98dp"/>
 
