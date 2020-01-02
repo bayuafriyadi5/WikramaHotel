@@ -43,28 +43,24 @@ public class DashboardActivty extends AppCompatActivity {
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+            = item -> {
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    ShowHomeFragment();
-                    return true;
-                case R.id.navigation_booking:
-                    ShowBookingFragment();
-                    return true;
-                case R.id.navigation_history:
-                    ShowHistoryFragment();
-                    return true;
-                case R.id.navigation_profile:
-                    ShowAccountFragment();
-                    return true;
-            }
-            return false;
-        }
-    };
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        ShowHomeFragment();
+                        return true;
+                    case R.id.navigation_booking:
+                        ShowBookingFragment();
+                        return true;
+                    case R.id.navigation_history:
+                        ShowHistoryFragment();
+                        return true;
+                    case R.id.navigation_profile:
+                        ShowAccountFragment();
+                        return true;
+                }
+                return false;
+            };
 
     private void ShowHomeFragment() {
         FragmentManager mFragmentManager = getSupportFragmentManager();

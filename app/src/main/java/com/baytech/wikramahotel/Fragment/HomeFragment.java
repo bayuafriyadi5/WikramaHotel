@@ -12,9 +12,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.baytech.wikramahotel.Activity.MapsActivity;
 import com.baytech.wikramahotel.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 
 /**
@@ -22,6 +29,8 @@ import com.baytech.wikramahotel.R;
  */
 public class HomeFragment extends Fragment {
 
+    DatabaseReference reference;
+    ImageView kamar1,kamar2,kamar3;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -41,12 +50,37 @@ public class HomeFragment extends Fragment {
 
         CardView map = getActivity().findViewById(R.id.view_location);
 
-        map.setOnClickListener(new View.OnClickListener() {
+        ImageView kamar1 = getActivity().findViewById(R.id.kamar1);
+        ImageView kamar2 = getActivity().findViewById(R.id.kamar2);
+        ImageView kamar3 = getActivity().findViewById(R.id.kamar3);
+
+        reference = FirebaseDatabase.getInstance().getReference().child("Foto");
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), MapsActivity.class);
-                startActivity(i);
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Picasso.get()
+                        .load((dataSnapshot.child("kamar1")
+                                .getValue()).toString()).centerCrop().fit()
+                        .into(kamar1);
+                Picasso.get()
+                        .load((dataSnapshot.child("kamar2")
+                                .getValue()).toString()).centerCrop().fit()
+                        .into(kamar2);
+                Picasso.get()
+                        .load((dataSnapshot.child("kamar3")
+                                .getValue()).toString()).centerCrop().fit()
+                        .into(kamar3);
             }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        map.setOnClickListener(v -> {
+            Intent i = new Intent(getActivity(), MapsActivity.class);
+            startActivity(i);
         });
     }
 }

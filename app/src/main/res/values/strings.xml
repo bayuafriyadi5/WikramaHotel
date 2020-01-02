@@ -5,9 +5,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_dashboard_activty">DashboardActivty</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_booking">Booking</string>
     <string name="title_history">History</string>
     <string name="title_profile">Profile</string>
@@ -16,4 +13,46 @@
     <string name="access_token">pk.eyJ1IjoiYmF5dGVjaCIsImEiOiJjazJjejFlanYzOGo1M21tejh0NW0ycGc0In0.QJnm6o0-SfSyonGu6dSxFQ</string>
     <string name="capital">Capital:</string>
     <string name="tap_on_marker_instruction">Tap on Marker</string>
+    <string name="edit_profile">EDIT PROFILE</string>
+    <string name="let_s_edit_your_account">Let\'s edit your account</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_id">Email ID</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="save">SAVE</string>
+    <string name="phone">Phone</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="booking_your_room">Booking Your Room</string>
+    <string name="sorry_the_service_is_not_available_yet">Sorry the service is not available yet.</string>
+    <string name="pick_your_date">Pick Your Date</string>
+    <string name="pick_date">Pick Date</string>
+    <string name="next">Next</string>
+    <string name="let_s_set_up_your_account">Let\'s set up your account</string>
+    <string name="notification">Notification</string>
+    <string name="settings">SETTINGS</string>
+    <string name="change_language">Change Language</string>
+    <string name="log_out">LOG OUT</string>
+    <string name="success_book_your_room">SUCCESS BOOK YOUR ROOM</string>
+    <string name="cancel">Cancel</string>
+    <string name="desc">Wikrama hotel rooms are rooms that are elegantly designed and comfortable. 1 room for 2 people.</string>
+    <string name="wait_for_the_code_i_sent_you">Wait for the code I sent You</string>
+    <string name="enter_verification_code">enter verification code</string>
+    <string name="account">ACCOUNT</string>
+    <string name="choose_type_room">Choose Type Room</string>
+    <string name="description">Description :</string>
+    <string name="desc_book">Wikrama hotel rooms are rooms  that are elegantly designed and  comfortable. 1 room for 2 people.</string>
+    <string name="facilities">Facilities :</string>
+    <string name="your_booking_history">Your Booking History</string>
+    <string name="welcome_to_wikrama_hotel">Welcome to Wikrama Hotel</string>
+    <string name="wikrama_vocational_highshool">Wikrama Vocational HighShool</string>
+    <string name="skill">Skill :</string>
+    <string name="hospitality_expertise_competencies_was_established_in_2017_and_is_the_7th_major_at_smk_wikrama_bogor">Hospitality expertise competencies was established in 2017 and is the 7th major at SMK Wikrama Bogor.</string>
+    <string name="tourism_knowledge_telephone_operator_services_bellboy_porter_services_reservation_services_reception_services_financial_transaction_document_services_houskeeping_services_including_room_service_public_areas_and_loundry_laundry">Tourism knowledge, telephone operator services, bellboy/porter services,reservation services, reception services, financial transaction document services, houskeeping services including room service, public areas and loundry (laundry).</string>
+    <string name="special_theory_room_practicum_room_hotel_miniature">Special theory room, practicum room, hotel miniature.</string>
+    <string name="type_room">Type Room</string>
+    <string name="view_location">View Location</string>
+    <string name="hotel_gallery">Hotel Gallery</string>
+    <string name="message_notif_daily">Looking For Hotel?</string>
+    <string name="_62">+62</string>
+    <string name="dilalog">Your order will be canceled in 12 hours if you have not made a payment!</string>
 </resources>

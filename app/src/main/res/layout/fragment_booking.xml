@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:fontFamily="@font/rubik_light"
-                    android:text="Choose Type Room"
+                    android:text="@string/choose_type_room"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +47,7 @@
                     app:cardCornerRadius="10dp"
                     android:elevation="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="210dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.495"
@@ -116,7 +116,7 @@
 
                                 <TextView
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Description :"
+                                    android:text="@string/description"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="@color/colorAccent"
@@ -126,16 +126,17 @@
                                 <TextView
                                     android:textSize="10sp"
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Wikrama hotel rooms are rooms \nthat are elegantly designed and \ncomfortable. 1 room for 2 people."
+                                    android:text="@string/desc_book"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="10dp"
                                     android:textColor="#444"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"/>
 
                                 <TextView
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Facilities :"
+                                    android:text="@string/facilities"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="@color/colorAccent"
@@ -149,8 +150,9 @@
                                     android:layout_height="match_parent">
 
                                     <LinearLayout
+                                        android:layout_marginBottom="12dp"
                                         android:orientation="vertical"
-                                        android:layout_width="98dp"
+                                        android:layout_width="80dp"
                                         android:layout_height="match_parent">
 
                                         <TextView
@@ -186,8 +188,9 @@
                                     </LinearLayout>
 
                                     <LinearLayout
+                                        android:layout_marginBottom="12dp"
                                         android:orientation="vertical"
-                                        android:layout_width="98dp"
+                                        android:layout_width="80dp"
                                         android:layout_height="match_parent">
 
                                         <TextView
@@ -237,7 +240,7 @@
                     app:cardCornerRadius="10dp"
                     android:elevation="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="210dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="36dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.495"
@@ -306,7 +309,7 @@
 
                                 <TextView
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Description :"
+                                    android:text="@string/description"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="@color/colorAccent"
@@ -316,16 +319,17 @@
                                 <TextView
                                     android:textSize="10sp"
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Wikrama hotel rooms are rooms \nthat are elegantly designed and \ncomfortable. 1 room for 2 people."
+                                    android:text="@string/desc_book"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="10dp"
                                     android:textColor="#444"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"/>
 
                                 <TextView
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Facilities :"
+                                    android:text="@string/facilities"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="@color/colorAccent"
@@ -339,8 +343,9 @@
                                     android:layout_height="match_parent">
 
                                     <LinearLayout
+                                        android:layout_marginBottom="12dp"
                                         android:orientation="vertical"
-                                        android:layout_width="98dp"
+                                        android:layout_width="80dp"
                                         android:layout_height="match_parent">
 
                                         <TextView
@@ -376,8 +381,9 @@
                                     </LinearLayout>
 
                                     <LinearLayout
+                                        android:layout_marginBottom="12dp"
                                         android:orientation="vertical"
-                                        android:layout_width="98dp"
+                                        android:layout_width="80dp"
                                         android:layout_height="match_parent">
 
                                         <TextView
@@ -427,7 +433,7 @@
                     app:cardCornerRadius="10dp"
                     android:elevation="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="210dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="36dp"
                     android:layout_marginBottom="18dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -497,7 +503,7 @@
 
                                 <TextView
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Description :"
+                                    android:text="@string/description"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="@color/colorAccent"
@@ -507,16 +513,17 @@
                                 <TextView
                                     android:textSize="10sp"
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Wikrama hotel rooms are rooms \nthat are elegantly designed and \ncomfortable. 1 room for 2 people."
+                                    android:text="@string/desc_book"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="10dp"
                                     android:textColor="#444"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"/>
 
                                 <TextView
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Facilities :"
+                                    android:text="@string/facilities"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="@color/colorAccent"
@@ -530,8 +537,9 @@
                                     android:layout_height="match_parent">
 
                                     <LinearLayout
+                                        android:layout_marginBottom="12dp"
                                         android:orientation="vertical"
-                                        android:layout_width="98dp"
+                                        android:layout_width="80dp"
                                         android:layout_height="match_parent">
 
                                         <TextView
@@ -567,8 +575,9 @@
                                     </LinearLayout>
 
                                     <LinearLayout
+                                        android:layout_marginBottom="12dp"
                                         android:orientation="vertical"
-                                        android:layout_width="98dp"
+                                        android:layout_width="80dp"
                                         android:layout_height="match_parent">
 
                                         <TextView

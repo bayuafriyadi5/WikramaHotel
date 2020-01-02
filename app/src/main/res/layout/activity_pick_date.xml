@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:fontFamily="@font/rubik_medium"
-        android:text="Pick Your Date"
+        android:text="@string/pick_your_date"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,7 +95,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
-                android:layout_width="240dp"
+                android:layout_width="220dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="68dp"
                 app:cardCornerRadius="10dp"
@@ -134,7 +134,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="14sp"
                     android:fontFamily="@font/rubik_medium"
-                    android:text="Pick Date"
+                    android:text="@string/pick_date"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -142,7 +142,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card3"
-                android:layout_width="240dp"
+                android:layout_width="220dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="24dp"
                 app:cardCornerRadius="10dp"
@@ -181,7 +181,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="14sp"
                     android:fontFamily="@font/rubik_medium"
-                    android:text="Pick Date"
+                    android:text="@string/pick_date"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -192,7 +192,7 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="60dp"
-                android:text="Next"
+                android:text="@string/next"
                 android:textColor="@color/white"
                 android:fontFamily="@font/rubik_medium"
                 android:background="@drawable/btnoren"

@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:fontFamily="@font/rubik_medium"
-        android:text="ACCOUNT"
+        android:text="@string/account"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +86,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/rubik_medium"
-                        android:text="Full Name"
+                        android:text="@string/full_name"
                         android:textColor="@color/colorAccent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -109,7 +109,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/rubik_medium"
-                        android:text="Email ID"
+                        android:text="@string/email_id"
                         android:textColor="@color/colorAccent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
@@ -132,7 +132,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/rubik_medium"
-                        android:text="Password"
+                        android:text="@string/password"
                         android:textColor="@color/colorAccent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
@@ -155,7 +155,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/rubik_medium"
-                        android:text="Phone Number"
+                        android:text="@string/phone_number"
                         android:textColor="@color/colorAccent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
@@ -272,7 +272,7 @@
                             android:layout_marginRight="8dp"
                             android:background="@drawable/btnoren"
                             android:fontFamily="@font/rubik_medium"
-                            android:text="EDIT PROFILE"
+                            android:text="@string/edit_profile"
                             android:textColor="@color/white"
                             android:textSize="16sp"/>
                     </FrameLayout>
@@ -291,7 +291,7 @@
                             android:layout_marginLeft="8dp"
                             android:background="@drawable/btnoren"
                             android:fontFamily="@font/rubik_medium"
-                            android:text="SETTINGS"
+                            android:text="@string/settings"
                             android:textColor="@color/white"
                             android:textSize="16sp"/>
                     </FrameLayout>

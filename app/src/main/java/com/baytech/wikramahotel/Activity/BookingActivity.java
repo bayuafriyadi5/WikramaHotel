@@ -3,11 +3,12 @@ package com.baytech.wikramahotel.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -19,7 +20,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import java.util.Random;
 
 public class BookingActivity extends AppCompatActivity {
 
@@ -43,7 +43,6 @@ public class BookingActivity extends AppCompatActivity {
     String USERNAME_KEY = "usernamekey";
     String username_key = "";
     String username_key_new = "";
-    Integer nomor_transaksi = new Random().nextInt();
     private boolean is_extra;
 
     @Override
@@ -183,7 +182,7 @@ public class BookingActivity extends AppCompatActivity {
         book.setOnClickListener(v -> {
 
             if (jumlah_room < valuejumlahroom){
-                Toast.makeText(this, "Room Tidak tersedia dengan jumlah tersebut!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Rooms Not available for this amount!", Toast.LENGTH_SHORT).show();
             }else if(valuejumlahroom <= 0){
                 Toast.makeText(this, "Please Input Your Room Quantity", Toast.LENGTH_SHORT).show();
             }else{
@@ -209,8 +208,16 @@ public class BookingActivity extends AppCompatActivity {
                         progressDialog.show();
 
 
-                        Intent gotosuccess = new Intent(BookingActivity.this, DashboardActivty.class);
-                        startActivity(gotosuccess);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(BookingActivity.this);
+                        builder.setMessage(getString(R.string.dilalog));
+
+                        builder.setNeutralButton("Ok", (dialog, id) -> {
+                            Intent gotosuccess = new Intent(BookingActivity.this, DashboardActivty.class);
+                            startActivity(gotosuccess);
+                        });
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+
 
                         progressDialog.dismiss();
 
@@ -288,6 +295,35 @@ public class BookingActivity extends AppCompatActivity {
             }
         });
     }
+
+//    @Override
+//    public void onBackPressed() {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(BookingActivity.this);
+//        builder.setMessage(getString(R.string.dilalog));
+//
+//        builder.setPositiveButton("Yes", (dialog, id) -> {
+//            cancel_book = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child(room);
+//            cancel_book.addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                    dataSnapshot.getRef().setValue(null);
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                }
+//            });
+//            Intent gotosuccess = new Intent(BookingActivity.this, DashboardActivty.class);
+//            startActivity(gotosuccess);
+//        });
+//        builder.setNegativeButton(
+//                "No",
+//                (dialog, id) -> dialog.cancel());
+//        AlertDialog dialog = builder.create();
+//        dialog.show();
+//    }
+
 
     public void getUsernameLocal(){
         SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY,MODE_PRIVATE);

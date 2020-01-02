@@ -1,4 +1,4 @@
-package com.baytech.wikramahotel.Activity;
+package com.baytech.wikramahotel.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.baytech.wikramahotel.R;

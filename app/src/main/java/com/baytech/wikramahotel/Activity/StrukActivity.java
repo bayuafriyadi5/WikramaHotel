@@ -58,7 +58,7 @@ public class StrukActivity extends AppCompatActivity {
         assert bundle != null;
         final String total = bundle.getString("total_harga");
 
-        new CountDownTimer(43200000, 1000) {
+        new CountDownTimer(3000, 1000) {
             public void onTick(long millisUntilFinished) {
 
             }
@@ -67,6 +67,9 @@ public class StrukActivity extends AppCompatActivity {
                 tambah_kamar();
                 cancel_book = FirebaseDatabase.getInstance().getReference().child("Booked").child(username_key_new).child(total);
                 cancel_book.removeValue();
+                Intent i = new Intent(StrukActivity.this,DashboardActivty.class);
+                startActivity(i);
+
             }
         }.start();
         reference = FirebaseDatabase.getInstance().getReference().child("Room").child("Reguler");

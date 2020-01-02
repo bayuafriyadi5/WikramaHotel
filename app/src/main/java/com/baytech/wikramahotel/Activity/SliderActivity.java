@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.baytech.wikramahotel.Adapter.SliderAdapter;
 import com.baytech.wikramahotel.R;
 
 public class SliderActivity extends AppCompatActivity {

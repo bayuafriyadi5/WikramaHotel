@@ -54,38 +54,36 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.password_login);
 
 
-        btn_regis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent  i = new Intent(MainActivity.this,RegisterActivity.class);
-                startActivity(i);
-            }
+        btn_regis.setOnClickListener(v -> {
+            Intent  i = new Intent(MainActivity.this,RegisterActivity.class);
+            startActivity(i);
         });
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String xtelp = telp.getText().toString();
-                final String xpassword = password.getText().toString();
+        btn_login.setOnClickListener(v -> {
+            final String xtelp = telp.getText().toString();
+            final String xpassword = password.getText().toString();
 
-                if (xtelp.equals("")|| xpassword.equals("")) {
-                    Toast.makeText(MainActivity.this, "Please fill all information!!", Toast.LENGTH_SHORT).show();
-                }else{
-                    final ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
-                    progressDialog.setMessage("Authenticating...");
-                    progressDialog.setIndeterminate(true);
-                    progressDialog.setCancelable(false);
-                    progressDialog.show();
+            if (xtelp.equals("")|| xpassword.equals("")) {
+                Toast.makeText(MainActivity.this, "Please fill all information!!", Toast.LENGTH_SHORT).show();
+            }else{
+                final ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+                progressDialog.setMessage("Authenticating...");
+                progressDialog.setIndeterminate(true);
+                progressDialog.setCancelable(false);
+                progressDialog.show();
 
-                    reference = FirebaseDatabase.getInstance().getReference().child("Users").child(xtelp);
+                reference = FirebaseDatabase.getInstance().getReference().child("Users").child(xtelp);
 
-                    reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.exists()){
-
+                reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()){
+                            String status = dataSnapshot.child("account_status").getValue().toString();
+                            progressDialog.dismiss();
+                            if(status.equals("Not Activated")){
+                                Toast.makeText(MainActivity.this, "Account is Not Activated!", Toast.LENGTH_SHORT).show();
+                            }else{
                                 String passwordFromFirebase = Objects.requireNonNull(dataSnapshot.child("password").getValue()).toString();
-
                                 if (xpassword.equals(passwordFromFirebase)){
 
                                     editor.putString(username_key,telp.getText().toString());
@@ -101,24 +99,20 @@ public class MainActivity extends AppCompatActivity {
                                     progressDialog.dismiss();
                                     Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
                                 }
-                            }else{
-                                progressDialog.dismiss();
-                                Toast.makeText(MainActivity.this, "No User!", Toast.LENGTH_SHORT).show();
                             }
                         }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
-                }
+                    }
+                });
             }
         });
     }
 
     private void navigateToHome() {
-        Intent intent = new Intent(MainActivity.this, DashboardActivty.class);
+        Intent intent = new Intent(MainActivity.this, SliderActivity.class);
         startActivity(intent);
         finish();
     }

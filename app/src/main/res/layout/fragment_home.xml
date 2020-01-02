@@ -30,12 +30,12 @@
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="248dp"
-                    android:layout_height="28dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="64dp"
                     android:fontFamily="@font/rubik_medium"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="Welcome to Wikrama Hotel"
+                    android:text="@string/welcome_to_wikrama_hotel"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -47,8 +47,8 @@
                     app:cardCornerRadius="10dp"
                     android:elevation="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="315dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.495"
                     app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +98,7 @@
                                     android:layout_marginRight="8dp"
                                     android:layout_marginTop="16dp"
                                     android:layout_gravity="center"
-                                    android:text="Wikrama Vocational HighShool"
+                                    android:text="@string/wikrama_vocational_highshool"
                                     android:textColor="@color/colorAccent"
                                     android:textSize="12sp"
                                     android:layout_width="wrap_content"
@@ -118,7 +118,7 @@
 
                                 <TextView
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Description :"
+                                    android:text="@string/description"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="@color/colorAccent"
@@ -128,16 +128,16 @@
                                 <TextView
                                     android:textSize="10sp"
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Hospitality expertise competencies was established  in 2017 and is the 7th major at SMK Wikrama Bogor."
+                                    android:text="@string/hospitality_expertise_competencies_was_established_in_2017_and_is_the_7th_major_at_smk_wikrama_bogor"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="#444"
-                                    android:layout_width="190dp"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"/>
 
                                 <TextView
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Skill :"
+                                    android:text="@string/skill"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="@color/colorAccent"
@@ -147,17 +147,17 @@
                                 <TextView
                                     android:textSize="10sp"
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Tourism knowledge, telephone operator services, bellboy/porter services,reservation services, reception services, financial transaction document services, houskeeping services including room service, public areas and loundry (laundry)."
+                                    android:text="@string/tourism_knowledge_telephone_operator_services_bellboy_porter_services_reservation_services_reception_services_financial_transaction_document_services_houskeeping_services_including_room_service_public_areas_and_loundry_laundry"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="#444"
-                                    android:layout_width="190dp"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"/>
 
 
                                 <TextView
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Facilities :"
+                                    android:text="@string/facilities"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
                                     android:textColor="@color/colorAccent"
@@ -167,11 +167,12 @@
                                 <TextView
                                     android:textSize="10sp"
                                     android:fontFamily="@font/rubik_light"
-                                    android:text="Special theory room, practicum room, hotel miniature."
+                                    android:text="@string/special_theory_room_practicum_room_hotel_miniature"
                                     android:layout_marginTop="8dp"
                                     android:layout_marginLeft="8dp"
+                                    android:layout_marginBottom="16dp"
                                     android:textColor="#444"
-                                    android:layout_width="190dp"
+                                    android:layout_width="150dp"
                                     android:layout_height="wrap_content"/>
 
 
@@ -190,7 +191,7 @@
 
                     <LinearLayout
                         android:id="@+id/linearLayout"
-                        android:layout_width="170dp"
+                        android:layout_width="150dp"
                         android:layout_height="match_parent"
                         android:layout_marginRight="25dp"
                         android:orientation="vertical"
@@ -219,7 +220,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="Type Room"
+                            android:text="@string/type_room"
                             android:textColor="@color/white"
                             app:layout_constraintEnd_toEndOf="@+id/cardView"
                             app:layout_constraintStart_toStartOf="@+id/cardView"
@@ -229,6 +230,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/linearLayout7"
                         android:layout_width="150dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -257,7 +259,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
                             android:layout_marginTop="8dp"
-                            android:text="View Location"
+                            android:text="@string/view_location"
                             android:textColor="@color/white" />
 
 
@@ -272,7 +274,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/rubik_light"
-                    android:text="Hotel Gallery"
+                    android:text="@string/hotel_gallery"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/cardView"
@@ -300,8 +302,9 @@
                             android:layout_height="98dp">
 
                             <ImageView
+                                android:id="@+id/kamar1"
                                 android:layout_marginRight="24dp"
-                                android:src="dr"
+                                android:src="@drawable/sleep"
                                 android:layout_width="227dp"
                                 android:layout_height="98dp"/>
 
@@ -316,6 +319,7 @@
                             android:layout_height="98dp">
 
                             <ImageView
+                                android:id="@+id/kamar2"
                                 android:layout_marginRight="24dp"
                                 android:src="@drawable/ic_undraw_apartment_rent_o0ut"
                                 android:layout_width="227dp"
@@ -332,6 +336,7 @@
                             android:layout_height="98dp">
 
                             <ImageView
+                                android:id="@+id/kamar3"
                                 android:layout_marginRight="24dp"
                                 android:src="@drawable/ic_undraw_apartment_rent_o0ut"
                                 android:layout_width="227dp"

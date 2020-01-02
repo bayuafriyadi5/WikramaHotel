@@ -117,7 +117,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardView4"
                         android:layout_width="match_parent"
-                        android:layout_height="290dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="3dp"
@@ -167,7 +167,7 @@
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/cardView3"
-                                android:layout_width="130dp"
+                                android:layout_width="120dp"
                                 android:layout_height="90dp"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="76dp"
@@ -236,12 +236,12 @@
 
                             <TextView
                                 android:id="@+id/textView11"
-                                android:layout_width="200dp"
+                                android:layout_width="170dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
                                 android:layout_marginTop="16dp"
                                 android:fontFamily="@font/rubik_light"
-                                android:text="Wikrama hotel rooms are rooms that are elegantly designed and comfortable. 1 room for 2 people."
+                                android:text="@string/desc_book"
                                 android:textSize="13sp"
                                 app:layout_constraintStart_toEndOf="@+id/linearLayout3"
                                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -284,8 +284,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
+                                android:layout_marginBottom="12dp"
                                 android:text="-Wifi"
                                 android:textSize="13sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="@+id/textView14"
                                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -381,7 +383,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardView5"
-                        android:layout_width="200dp"
+                        android:layout_width="175dp"
                         android:layout_height="60dp"
                         android:layout_marginTop="30dp"
                         app:cardCornerRadius="10dp"
@@ -411,7 +413,7 @@
                                 android:fontFamily="@font/rubik_light"
                                 android:text="EXTRA BED"
                                 android:textColor="@color/colorAccent"
-                                android:textSize="20sp"
+                                android:textSize="18sp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -476,7 +478,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/btn_book"
-                        android:layout_width="200dp"
+                        android:layout_width="175dp"
                         android:layout_height="60dp"
                         android:layout_marginTop="24dp"
                         app:cardBackgroundColor="@color/colorAccent"
