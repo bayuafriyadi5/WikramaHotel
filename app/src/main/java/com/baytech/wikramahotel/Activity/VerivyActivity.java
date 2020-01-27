@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.baytech.wikramahotel.R;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.google.android.material.snackbar.Snackbar;
@@ -30,9 +32,13 @@ public class VerivyActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     EditText editTextCode;
     Button btn_sign_in;
+    ProgressBar progressBar;
     private String mVerificationId;
     DatabaseReference reference;
 
+    String USERNAME_KEY = "usernamekey";
+    String username_key = "";
+    String username_key_new = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,7 @@ public class VerivyActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         editTextCode = findViewById(R.id.editTextCode);
         btn_sign_in = findViewById(R.id.buttonSignIn);
+        progressBar = findViewById(R.id.progressbar);
 
 
         sendVerificationCode(mobile);
@@ -72,6 +79,7 @@ public class VerivyActivity extends AppCompatActivity {
                 TimeUnit.SECONDS,
                 TaskExecutors.MAIN_THREAD,
                 mCallbacks);
+        progressBar.setVisibility(View.GONE);
     }
 
 
@@ -91,12 +99,15 @@ public class VerivyActivity extends AppCompatActivity {
                 //verifying the code
                 verifyVerificationCode(code);
             }
+            progressBar.setVisibility(View.GONE);
         }
 
         @Override
         public void onVerificationFailed(FirebaseException e) {
             Toast.makeText(VerivyActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            progressBar.setVisibility(View.GONE);
         }
+
 
         @Override
         public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
@@ -104,6 +115,8 @@ public class VerivyActivity extends AppCompatActivity {
 
             //storing the verification id that is sent to the user
             mVerificationId = s;
+            progressBar.setVisibility(View.GONE);
+
         }
     };
 
@@ -114,6 +127,7 @@ public class VerivyActivity extends AppCompatActivity {
 
         //signing the user
         signInWithPhoneAuthCredential(credential);
+        progressBar.setVisibility(View.GONE);
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
@@ -123,39 +137,52 @@ public class VerivyActivity extends AppCompatActivity {
                 .addOnCompleteListener(VerivyActivity.this, task -> {
                     if (task.isSuccessful()) {
                         //verification successful we will start the profile activity
-//                        reference = FirebaseDatabase.getInstance().getReference().child("Users").child(mobile);
-//                        reference.addValueEventListener(new ValueEventListener() {
-//                            @Override
-//                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                                dataSnapshot.getRef().child("account_status").setValue("Activated");
-//                            }
-//
-//                            @Override
-//                            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                            }
-//                        });
+                        reference = FirebaseDatabase.getInstance().getReference().child("Users").child(mobile);
+                        reference.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                dataSnapshot.getRef().child("account_status").setValue("Activated");
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
                         Intent intent = new Intent(VerivyActivity.this, SliderActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
+                        progressBar.setVisibility(View.GONE);
 
                     } else {
 
                         //verification unsuccessful.. display an error message
-
                         String message = "Something is wrong, we will fix it soon...";
+                        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 
                         if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                            message = "Invalid code entered...";
+                            Toast.makeText(this, "Code Invalid", Toast.LENGTH_SHORT).show();
+                            SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY,MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString(username_key,null);
+                            editor.apply();
+
+                            Intent intent = new Intent(VerivyActivity.this,MainActivity.class);
+                            intent.putExtra("finish", true);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                                    Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                    Intent.FLAG_ACTIVITY_NEW_TASK); // To clean up all activities
+                            startActivity(intent);
+                            finish();
                         }
 
-                        Snackbar snackbar = Snackbar.make(findViewById(R.id.parent), message, Snackbar.LENGTH_LONG);
-                        snackbar.setAction("Dismiss", v -> {
 
-                        });
-                        snackbar.show();
                     }
                 });
+    }
+    public void getUsernameLocal(){
+        SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY,MODE_PRIVATE);
+        username_key_new = sharedPreferences.getString(username_key,"");
     }
 
 }

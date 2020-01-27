@@ -56,25 +56,27 @@ public class RegisterActivity extends AppCompatActivity {
             final String xemail = email.getText().toString();
 
 
+            final ProgressDialog progressDialog = new ProgressDialog(RegisterActivity.this);
+            progressDialog.setMessage("Please wait...");
+            progressDialog.setIndeterminate(true);
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+
             userref = FirebaseDatabase.getInstance().getReference().child("Users").child(xtelp);
             userref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (xname.equals("") || xpassword.equals("") || xtelp.equals("") || xemail.equals("")){
                         Toast.makeText(RegisterActivity.this, "Please Fill All Data!", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                     }else if(xtelp.length() > 11 ){
                         Toast.makeText(RegisterActivity.this, "Invalid Format", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                     }
                     else if (dataSnapshot.exists()){
                             Toast.makeText(RegisterActivity.this, "User Already Exists!", Toast.LENGTH_SHORT).show();
                         }
                     else{
-                            final ProgressDialog progressDialog = new ProgressDialog(RegisterActivity.this);
-                            progressDialog.setMessage("Please wait...");
-                            progressDialog.setIndeterminate(true);
-                            progressDialog.setCancelable(false);
-                            progressDialog.show();
-
                             SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY,MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString(username_key,xtelp);

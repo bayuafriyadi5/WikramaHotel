@@ -2,6 +2,7 @@ package com.baytech.wikramahotel.Fragment;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -49,10 +50,12 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         CardView map = getActivity().findViewById(R.id.view_location);
+        CardView room = getActivity().findViewById(R.id.type_room);
 
         ImageView kamar1 = getActivity().findViewById(R.id.kamar1);
         ImageView kamar2 = getActivity().findViewById(R.id.kamar2);
         ImageView kamar3 = getActivity().findViewById(R.id.kamar3);
+        ImageView profile = getActivity().findViewById(R.id.foto_kamar);
 
         reference = FirebaseDatabase.getInstance().getReference().child("Foto");
         reference.addValueEventListener(new ValueEventListener() {
@@ -70,6 +73,10 @@ public class HomeFragment extends Fragment {
                         .load((dataSnapshot.child("kamar3")
                                 .getValue()).toString()).centerCrop().fit()
                         .into(kamar3);
+                Picasso.get()
+                        .load((dataSnapshot.child("profile")
+                                .getValue()).toString()).centerCrop().fit()
+                        .into(profile);
             }
 
             @Override
@@ -81,6 +88,12 @@ public class HomeFragment extends Fragment {
         map.setOnClickListener(v -> {
             Intent i = new Intent(getActivity(), MapsActivity.class);
             startActivity(i);
+        });
+
+        room.setOnClickListener(v -> {
+            Uri webpage = Uri.parse("http://www.smkwikrama.sch.id/");
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+            startActivity(webIntent);
         });
     }
 }

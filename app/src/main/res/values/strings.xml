@@ -55,4 +55,5 @@
     <string name="message_notif_daily">Looking For Hotel?</string>
     <string name="_62">+62</string>
     <string name="dilalog">Your order will be canceled in 12 hours if you have not made a payment!</string>
+    <string name="empty_text">Your History is Empty.</string>
 </resources>

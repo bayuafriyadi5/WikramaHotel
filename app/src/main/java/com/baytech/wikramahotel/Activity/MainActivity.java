@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
                             }else{
                                 String passwordFromFirebase = Objects.requireNonNull(dataSnapshot.child("password").getValue()).toString();
                                 if (xpassword.equals(passwordFromFirebase)){
-
+                                    SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY,MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
                                     editor.putString(username_key,telp.getText().toString());
                                     editor.apply();
 
@@ -100,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
                                 }
                             }
+                        }else{
+                            Toast.makeText(MainActivity.this, "No Account!", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
                         }
                     }
                     @Override

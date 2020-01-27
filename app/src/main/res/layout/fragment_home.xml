@@ -79,32 +79,64 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:orientation="vertical"
                                 android:layout_width="150dp"
                                 android:layout_height="match_parent">
 
                                 <ImageView
+                                    android:layout_alignParentRight="true"
+                                    android:src="@drawable/elip1"
+                                    android:layout_marginTop="-5dp"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"/>
+
+                                <ImageView
+                                    android:src="@drawable/elip2"
+                                    android:layout_marginTop="-5dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"/>
+
+                                <ImageView
+                                    android:src="@drawable/elip2"
+                                    android:layout_alignParentBottom="true"
+                                    android:rotation="180"
+                                    android:layout_marginBottom="-5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    />
+
+                                <ImageView
+                                    android:src="@drawable/elip1"
+                                    android:rotation="180"
+                                    android:layout_marginBottom="-5dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"/>
+                                <ImageView
                                     android:id="@+id/foto_kamar"
-                                    android:layout_marginTop="32dp"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/sleep"
                                     android:layout_width="100dp"
-                                    android:layout_height="100dp"/>
+                                    android:layout_height="100dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginStart="25dp"
+                                    android:layout_marginTop="75dp"
+                                    android:layout_marginEnd="25dp"
+                                    android:src="@drawable/sleep" />
 
                                 <TextView
-                                    android:textAlignment="center"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginRight="8dp"
-                                    android:layout_marginTop="16dp"
-                                    android:layout_gravity="center"
-                                    android:text="@string/wikrama_vocational_highshool"
-                                    android:textColor="@color/colorAccent"
-                                    android:textSize="12sp"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"/>
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/foto_kamar"
+                                    android:layout_marginTop="1dp"
+                                    android:text="@string/wikrama_vocational_highshool"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="12sp" />
 
-                            </LinearLayout>
+                            </RelativeLayout>
 
                             <LinearLayout
                                 android:background="#D3D3D3"
@@ -191,7 +223,7 @@
 
                     <LinearLayout
                         android:id="@+id/linearLayout"
-                        android:layout_width="150dp"
+                        android:layout_width="160dp"
                         android:layout_height="match_parent"
                         android:layout_marginRight="25dp"
                         android:orientation="vertical"
@@ -199,7 +231,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/cardView"
+                            android:id="@+id/type_room"
                             android:layout_width="match_parent"
                             android:layout_height="80dp"
                             android:layout_marginTop="24dp"
@@ -211,7 +243,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/undraw_sleep_analysis_o5f9" />
+                                android:src="@drawable/ic_undraw_portfolio_website_lidw" />
 
                         </androidx.cardview.widget.CardView>
 
@@ -220,18 +252,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="@string/type_room"
+                            android:text="Wikrama Web"
                             android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="@+id/cardView"
-                            app:layout_constraintStart_toStartOf="@+id/cardView"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+                            app:layout_constraintEnd_toEndOf="@+id/type_room"
+                            app:layout_constraintStart_toStartOf="@+id/type_room"
+                            app:layout_constraintTop_toBottomOf="@+id/type_room" />
 
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/linearLayout7"
-                        android:layout_width="150dp"
+                        android:layout_width="160dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -277,7 +309,7 @@
                     android:text="@string/hotel_gallery"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="@+id/cardView"
+                    app:layout_constraintStart_toStartOf="@+id/type_room"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
                 <HorizontalScrollView

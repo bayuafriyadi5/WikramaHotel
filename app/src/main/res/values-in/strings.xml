@@ -55,4 +55,5 @@
     <string name="hotel_gallery">Hotel Galeri</string>
     <string name="message_notif_daily">Anda Mencari Hotel?</string>
     <string name="dilalog">Pesanan anda akan di batalkan dalam 12 jam jika anda belum melakukan pembayaran!</string>
+    <string name="empty_text">Your History is Empty.</string>
 </resources>

@@ -14,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.baytech.wikramahotel.Adapter.AdapterBooking;
 import com.baytech.wikramahotel.Model.Booking;
@@ -47,6 +49,8 @@ public class HistoryFragment extends Fragment {
     DatabaseReference reference;
     AdapterBooking adapterBooking;
     Button cancel;
+    ImageView empty;
+    TextView text_empty;
 
     public HistoryFragment() {
         // Required empty public constructor
@@ -69,6 +73,8 @@ public class HistoryFragment extends Fragment {
         booked = getActivity().findViewById(R.id.history);
         booked.setHasFixedSize(true);
         cancel = getActivity().findViewById(R.id.cancel_book);
+        empty = getActivity().findViewById(R.id.empty);
+        text_empty = getActivity().findViewById(R.id.empty_text);
 
         booked.setLayoutManager(new LinearLayoutManager(getActivity()));
         list = new ArrayList<>();
@@ -78,6 +84,7 @@ public class HistoryFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
                     for (DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
                         Booking p = dataSnapshot1.getValue(Booking.class);
                         list.add(p);
@@ -86,6 +93,12 @@ public class HistoryFragment extends Fragment {
                     adapterBooking = new AdapterBooking(getActivity(),list);
                     booked.setAdapter(adapterBooking);
                     adapterBooking.notifyDataSetChanged();
+                    empty.setVisibility(View.INVISIBLE);
+                    text_empty.setVisibility(View.INVISIBLE);
+                }else{
+                 empty.setVisibility(View.VISIBLE);
+                 text_empty.setVisibility(View.VISIBLE);
+                }
 
             }
 

@@ -12,7 +12,14 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.VerivyActivity"></activity>
+        <activity android:name=".Activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.VerivyActivity" />
         <activity android:name=".Activity.PickDateActivity" />
         <activity android:name=".Activity.MapsActivity" />
         <activity android:name=".Activity.SettingsActivity" />
@@ -27,11 +34,6 @@
         <activity android:name=".Activity.SliderActivity" />
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
@@ -39,10 +41,9 @@
             android:resource="@array/preloaded_fonts" />
 
         <receiver
-            android:name="com.baytech.wikramahotel.Service.DailyReminderService"
+            android:name=".Service.DailyReminderService"
             android:enabled="true"
             android:exported="true" />
-
     </application>
 
 </manifest>
