@@ -58,7 +58,7 @@ public class StrukActivity extends AppCompatActivity {
         assert bundle != null;
         final String total = bundle.getString("total_harga");
 
-        new CountDownTimer(3000, 1000) {
+        new CountDownTimer(43200000, 1000) {
             public void onTick(long millisUntilFinished) {
 
             }
@@ -106,7 +106,7 @@ public class StrukActivity extends AppCompatActivity {
         });
         
         judul.setOnClickListener(v -> {
-            Toast.makeText(this, "anjay", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Title", Toast.LENGTH_SHORT).show();
         });
 
         back.setOnClickListener(v -> {
